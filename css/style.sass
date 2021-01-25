@@ -1,0 +1,538 @@
+@import "bootstrap"
+@import "slick-less"
+//@import "select2"
+//@import "ui"
+
+=b_a()
+  content: ''
+  position: absolute
+
+=m_a()
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  margin: auto
+
+
+=flex()
+  display: flex
+  display: -webkit-flex
+
+=j-center()
+  justify-content: center
+  -webkit-justify-content: center
+
+=j-beetween()
+  justify-content: space-between
+  -webkit-justify-content: space-between
+
+=j-space-around()
+  justify-content: space-around
+  -webkit-justify-content: space-around
+
+=j-end()
+  justify-content: flex-end
+  -webkit-justify-content: flex-end
+
+=j-start()
+  justify-content: flex-start
+  -webkit-justify-content: flex-start
+
+=ai-center()
+  align-items: center
+  -webkit-align-items: center
+
+=ai-start()
+  align-items: flex-start
+  -webkit-align-items: flex-start
+
+=ai-end()
+  align-items: flex-end
+  -webkit-align-items: flex-end
+
+=as-center()
+  align-self: center
+  -webkit-align-self: center
+
+=as-end()
+  align-self: flex-end
+  -webkit-align-self: flex-end
+
+=as-start()
+  align-self: flex-start
+  -webkit-align-self: flex-start
+
+=wrap()
+  flex-wrap: wrap
+  -webkit-flex-wrap: wrap
+
+=col()
+  flex-direction: column
+  -webkit-flex-direction: column
+
+
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  border-radius: $radius
+
+
+=box-shadow($box-shadow)
+  -webkit-box-shadow: $box-shadow
+  -moz-box-shadow: $box-shadow
+  box-shadow: $box-shadow
+
+
+=transform($transform)
+  transform: $transform
+  -webkit-transform: $transform
+  -moz-transform: $transform
+  -ms-transform: $transform
+  -o-transform: $transform
+
+
+=transition($transition_default)
+  transition: $transition_default
+  -webkit-transition: $transition_default
+  -moz-transition: $transition_default
+  -o-transition: $transition_default
+
+
+
+@font-face
+  font-family: 'HelveticaNeueCyr-Medium'
+  src: url('../fonts/HelveticaNeueCyr-Medium.eot')
+  src: local('HelveticaNeueCyr-Medium'), url('../fonts/HelveticaNeueCyr-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/HelveticaNeueCyr-Medium.woff') format('woff'), url('../fonts/HelveticaNeueCyr-Medium.ttf') format('truetype')
+  font-weight: 500
+  font-style: normal
+$medium: 'HelveticaNeueCyr-Medium'
+
+@font-face
+  font-family: 'HelveticaNeueCyr-Heavy'
+  src: url('../fonts/HelveticaNeueCyr-Heavy.eot')
+  src: local('HelveticaNeueCyr-Heavy'), url('../fonts/HelveticaNeueCyr-Heavy.eot?#iefix') format('embedded-opentype'), url('../fonts/HelveticaNeueCyr-Heavy.woff') format('woff'),url('../fonts/HelveticaNeueCyr-Heavy.ttf') format('truetype')
+  font-weight: 900
+  font-style: normal
+$heavy: 'HelveticaNeueCyr-Heavy'
+
+@font-face
+  font-family: 'HelveticaNeueCyr-Black'
+  src: url('../fonts/HelveticaNeueCyr-Black.eot')
+  src: local('HelveticaNeueCyr-Black'), url('../fonts/HelveticaNeueCyr-Black.eot?#iefix') format('embedded-opentype'), url('../fonts/HelveticaNeueCyr-Black.woff') format('woff'), url('../fonts/HelveticaNeueCyr-Black.ttf') format('truetype')
+  font-weight: 900
+  font-style: normal
+
+$black: 'HelveticaNeueCyr-Black'
+
+@font-face
+  font-family: 'HelveticaNeueCyr-BoldItalic'
+  src: url('../fonts/HelveticaNeueCyr-BoldItalic.eot')
+  src: local('HelveticaNeueCyr-BoldItalic'), url('../fonts/HelveticaNeueCyr-BoldItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/HelveticaNeueCyr-BoldItalic.woff') format('woff'), url('../fonts/HelveticaNeueCyr-BoldItalic.ttf') format('truetype')
+  font-weight: bold
+  font-style: italic
+$boldItalic: 'HelveticaNeueCyr-BoldItalic'
+
+@font-face
+  font-family: 'HelveticaNeueCyr-Italic'
+  src: url('../fonts/HelveticaNeueCyr-Italic.eot')
+  src: local('HelveticaNeueCyr-Italic'), url('../fonts/HelveticaNeueCyr-Italic.eot?#iefix') format('embedded-opentype'), url('../fonts/HelveticaNeueCyr-Italic.woff') format('woff'), url('../fonts/HelveticaNeueCyr-Italic.ttf') format('truetype')
+  font-weight: 500
+  font-style: italic
+$medium_italic: 'HelveticaNeueCyr-Italic'
+
+@font-face
+  font-family: 'HelveticaNeueCyr-Roman'
+  src: url('../fonts/HelveticaNeueCyr-Roman.eot')
+  src: local('HelveticaNeueCyr-Roman'), url('../fonts/HelveticaNeueCyr-Roman.eot?#iefix') format('embedded-opentype'), url('../fonts/HelveticaNeueCyr-Roman.woff') format('woff'), url('../fonts/HelveticaNeueCyr-Roman.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+$roman: 'HelveticaNeueCyr-Roman'
+
+@font-face
+  font-family: 'HelveticaNeueCyr-Bold'
+  src: url('../fonts/HelveticaNeueCyr-Bold.eot')
+  src: local('HelveticaNeueCyr-Bold'), url('../fonts/HelveticaNeueCyr-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/HelveticaNeueCyr-Bold.woff') format('woff'), url('../fonts/HelveticaNeueCyr-Bold.ttf') format('truetype')
+  font-weight: bold
+  font-style: normal
+
+$bold: 'HelveticaNeueCyr-Bold'
+
+@font-face
+  font-family: 'HelveticaNeueCyr-Light'
+  src: url('../fonts/HelveticaNeueCyr-Light.eot')
+  src: local('HelveticaNeueCyr-Light'), url('../fonts/HelveticaNeueCyr-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/HelveticaNeueCyr-Light.woff') format('woff'), url('../fonts/HelveticaNeueCyr-Light.ttf') format('truetype')
+  font-weight: 300
+  font-style: normal
+
+$light: 'HelveticaNeueCyr-Light'
+
+
+$transition_default: .3s linear
+
+$text_color: #8C8C8C
+$red:  #EF4123
+$red_hover: #DA3619
+$bg_grey: #F3F3F4
+$green: #9AC32B
+$black: #333333
+
+a, button
+  +transition($transition_default)
+
+a
+  color: $red
+  text-decoration: none
+  &:hover, &:focus
+    color: $red_hover
+    text-decoration: underline
+
+
+button, input, .form-control
+  outline: none
+
+.form-control
+  &:hover, &:focus
+    box-shadow: none
+    outline: none
+
+
+button
+  cursor: pointer
+  &:hover, &:focus
+    +box-shadow(none)
+    outline: none
+
+img, video
+  max-width: 100%
+*
+  outline: none
+
+ul
+  padding: 0
+  margin: 0
+  li
+    list-style: none
+
+.container
+  max-width: 1210px
+
+body
+  font-size: 14px
+  line-height: 20px
+  color: $text_color
+  font-family: $roman
+
+
+
+.header_row
+  +flex
+  +ai-center
+  +j-beetween
+  +wrap
+  padding: 33px 0
+  @media (max-width: 1200px)
+    padding: 20px 0
+  @media (max-width: 991px)
+    padding: 10px 0
+  .col_left
+    width: 37%
+    +flex
+    +ai-center
+    @media (max-width: 1200px)
+      width: 30%
+    @media (max-width: 991px)
+      width: 100%
+      +j-center
+      margin-bottom: 10px
+  .col_right
+    width: 63%
+    +flex
+    +ai-center
+    +wrap
+    +j-beetween
+    @media (max-width: 1200px)
+      width: 70%
+    @media (max-width: 991px)
+      width: 100%
+      margin-bottom: 10px
+
+
+
+.header_contacts
+  +flex
+  +ai-center
+  .phone
+    font-size: 14px
+    font-family: $medium
+
+
+.social_menu
+  +flex
+  +ai-center
+  margin-right: 45px
+  @media (max-width: 1200px)
+    margin-right: 20px
+  li
+    margin-right: 10px
+    @media (max-width: 1200px)
+      margin-right: 5px
+
+
+.logo
+  @media (max-width: 1200px)
+    margin-right: 10px
+  @media (max-width: 767px)
+    width: 100%
+    text-align: center
+    margin-bottom: 15px
+
+.search_box
+  @media (max-width: 1200px)
+    margin-right: 10px
+  .search_form
+    +flex
+    +ai-center
+    @media (max-width: 575px)
+      max-width: 180px
+
+    .form-control
+      border: 1px solid #DADADA
+      background: #EEEEEE
+      width: 100%
+      height: 30px
+      +border-radius(0)
+      margin-right: 3px
+      padding-left: 15px
+      @media (min-width: 1201px)
+        width: 247px
+
+      &::-webkit-input-placeholder
+        color: #8C8C8C
+        font-size: 12px
+      &::-moz-placeholder
+        color: #8C8C8C
+        font-size: 12px
+      &::-ms-input-placeholder
+        color: #8C8C8C
+        font-size: 12px
+      &:-moz-placeholder
+        color: #8C8C8C
+        font-size: 12px
+      &:-ms-input-placeholder
+        color: #8C8C8C
+        font-size: 12px
+    .search_btn
+      width: 30px
+      height: 30px
+      background: $red
+      border: 1px solid $red
+      position: relative
+      &:hover
+        background: $red_hover
+      &:before
+        +b_a
+        +m_a
+        width: 15px
+        height: 15px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='6.46154' cy='6.46154' r='5.46154' stroke='white' stroke-width='2'/%3e%3cpath d='M14.0002 14L11.2002 11.2' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+
+
+.account_box
+  .account_link
+    +flex
+    +ai-center
+    color: $black
+    text-decoration: none
+    &:hover
+      text-decoration: none
+      color: $red
+    span
+      font-size: 12px
+      display: inline-block
+      margin-left: 10px
+.mm_btn
+  width: 25px
+  height: 20px
+  +flex
+  .hamburger
+    position: relative
+    width: 25px
+    height: 20px
+    background: none
+    border: 0
+    span
+      position: absolute
+      left: 0
+      width: 100%
+      height: 2px
+      +border-radius(2px)
+      background: $red
+      &:nth-child(1)
+        top: 0
+      &:nth-child(2)
+        top: 0
+        bottom: 0
+        margin: auto
+      &:nth-child(3)
+        bottom: 0
+  @media (min-width: 992px)
+    display: none
+
+.main_menu
+  background: $red
+  @media (max-width: 991px)
+    position: fixed
+    top: 0
+    right: 0
+    width: 80%
+    height: 100%
+    z-index: 9999
+    padding: 50px 10px 30px
+    +transition($transition_default)
+    opacity: 0
+    +transform(translateX(100%))
+    overflow: auto
+    &.open
+      opacity: 1
+      +transform(translateX(0))
+
+  .mm_close
+    width: 30px
+    height: 30px
+    background: #fff
+    position: absolute
+    left: 0
+    top: 0
+    &:before, &:after
+      +b_a
+      +m_a
+      width: 25px
+      height: 1px
+      background: $red
+    &:before
+      +transform(rotate(45deg))
+    &:after
+      +transform(rotate(-45deg))
+    @media (min-width: 992px)
+      display: none
+
+
+  .nav
+    > li
+      position: relative
+      @media (max-width: 991px)
+        width: 100%
+      @media (min-width: 992px)
+        flex-grow: 1
+        &:hover
+          .sub_menu
+            display: block
+
+      .arrow
+        position: absolute
+        width: 30px
+        height: 30px
+        right: 0
+        top: 4px
+        cursor: pointer
+        @media (min-width: 992px)
+          display: none
+        &:before, &::after
+          +b_a
+          +m_a
+          width: 25px
+          height: 1px
+          background: #fff
+        &:after
+          +transform(rotate(90deg))
+        &.act
+          &:after
+            opacity: 0
+
+      &.has_child
+        @media (min-width: 992px)
+          > a
+            &:after
+              +b_a
+              width: 0
+              height: 0
+              border-top: 3px solid #fff
+              border-left: 3px solid transparent
+              border-right: 3px solid transparent
+              right: 18px
+              top: 0
+              bottom: 0
+              margin: auto
+
+
+      >
+        a
+          color: #fff
+          font-family: $bold
+          font-size: 13px
+          text-transform: uppercase
+          text-decoration: none
+          display: inline-block
+          padding: 17px 20px
+          position: relative
+          width: 100%
+          text-align: center
+          @media (max-width: 1200px)
+            padding: 15px
+          @media (max-width: 991px)
+            text-align: left
+            padding: 10px
+
+          &:hover
+            background: $red_hover
+    .sub_menu
+      display: none
+
+      @media (min-width: 992px)
+        position: absolute
+        top: 100%
+        left: 0
+        min-width: 415px
+        background: #fff
+        z-index: 10
+        border: 1px solid #DFDFDF
+        +box-shadow( 3px 4px 35px rgba(51, 51, 51, 0.15))
+        padding: 20px 30px
+      @media (max-width: 991px)
+        padding-left: 20px
+      li
+        position: relative
+        padding-left: 15px
+        margin-bottom: 12px
+        &:last-child
+          margin-bottom: 0
+        &:before
+          +b_a
+          left: 0
+          top: 7px
+          +border-radius(50%)
+          background: $red
+          width: 7px
+          height: 7px
+          @media (max-width: 991px)
+            background: #fff
+
+        a
+          color: $black
+          font-size: 14px
+          text-transform: uppercase
+          font-family: $medium
+          @media (max-width: 991px)
+            color: #fff
+          &:hover
+            color: $red
+            text-decoration: none
+            @media (max-width: 991px)
+              color: #fff
+
+
+
+
+
+
