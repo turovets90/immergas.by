@@ -919,3 +919,73 @@ strong, b
       text-transform: uppercase
       text-decoration: none
 
+.footer_menu
+  +flex
+  +ai-center
+  +wrap
+  li
+    text-align: center
+    @media (min-width: 992px)
+      flex-grow: 1
+    a
+      color: #333
+      font-size: 13px
+      text-decoration: none
+      font-family: $bold
+      text-transform: uppercase
+      display: inline-block
+      padding: 20px 10px
+      width: 100%
+      &:hover
+        background: $red_hover
+        color: #fff
+
+
+footer
+  background: #545454
+  color: #fff
+  padding: 45px 100px
+  @media (max-width: 1200px)
+    padding: 30px 70px
+  @media (max-width: 991px)
+    padding: 30px 50px
+  @media (max-width: 767px)
+    padding: 30px
+  .footer_text
+    font-size: 12px
+    line-height: 14px
+    @media (max-width: 767px)
+      margin-bottom: 20px
+      text-align: center
+    p
+      margin-bottom: 0
+
+  .social_menu
+    +j-end
+    margin-right: 0
+    @media (max-width: 767px)
+      +j-center
+    li
+      &:last-child
+        margin-right: 0
+  .copyright
+    color: #fff
+    font-size: 12px
+    line-height: 12px
+    text-decoration: underline
+    text-align: center
+    @media (max-width: 767px)
+      margin-bottom: 20px
+
+  .logo
+    margin-bottom: 35px
+    @media (max-width: 767px)
+      margin-bottom: 20px
+  .phone
+    margin-bottom: 30px
+    display: block
+    @media (max-width: 767px)
+      text-align: center
+      margin-bottom: 20px
+  a, .phone
+    color: #fff
