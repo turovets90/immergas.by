@@ -46,6 +46,25 @@ $(document).ready(function(){
     });
 
 
+    $(".main_slider").slick({
+        infinite: true,
+        arrows: false,
+        dots: true,
+        //autoplay: true,
+        //speed: 3000,
+        //autoplaySpeed: 3000,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    });
+
+    $(".main_product_slider").slick({
+        infinite: true,
+        arrows: true,
+        dots: false,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    });
+
 
 
 });

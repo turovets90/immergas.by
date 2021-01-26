@@ -214,6 +214,7 @@ ul
   li
     list-style: none
 
+
 .container
   max-width: 1210px
 
@@ -223,6 +224,9 @@ body
   color: $text_color
   font-family: $roman
 
+
+header
+  margin-bottom: 15px
 
 
 .header_row
@@ -421,6 +425,7 @@ body
   .nav
     > li
       position: relative
+      margin-bottom: 0
       @media (max-width: 991px)
         width: 100%
       @media (min-width: 992px)
@@ -531,8 +536,386 @@ body
             @media (max-width: 991px)
               color: #fff
 
+strong, b
+  font-family: $medium
+.btn_default
+  width: 100%
+  max-width: 180px
+  height: 40px
+  background: $red
+  color: #fff
+  +flex
+  +ai-center
+  +j-center
+  border: 0
+  text-decoration: none
+  font-family: $medium
+  font-size: 13px
+  text-transform: uppercase
+  &:hover, &:focus
+    text-decoration: none
+    background: $red_hover
+    color: #fff
+
+.main_slider
+  .slick-dots
+    bottom: 15px
+    @media (max-width: 1200px)
+      bottom: 10px
+    @media (max-width: 767px)
+      bottom: 0
+    li
+      &.slick-active
+        button
+          background: none
+      button
+        width: 10px
+        height: 10px
+        +border-radius(50%)
+        border: 1px solid $black
+        background: $black
+        &:before
+          display: none
+  .main_slider_item
+    padding: 30px 100px
+    +flex
+    +ai-center
+    height: 440px
+    background-size: cover
+    background-position: center
+    @media (max-width: 1200px)
+      padding: 30px
+    @media (max-width: 991px)
+      height: auto
+      min-height: 400px
+    @media (max-width: 767px)
+      padding: 40px 15px
+      min-height: 300px
+      background-position: right
+    .main_slider_item_content
+      max-width: 480px
+      @media (max-width: 767px)
+        background: rgba(255, 255, 255,0.5)
+        padding: 10px
+        +border-radius(3px)
+      .title
+        color: #333
+        font-size: 30px
+        line-height: 44px
+        font-family: $light
+        text-transform: uppercase
+        margin-bottom: 25px
+        @media (max-width: 1200px)
+          font-size: 28px
+          line-height: 1.2
+        @media (max-width: 991px)
+          font-size: 26px
+        @media (max-width: 767px)
+          font-size: 24px
+      .sub_title
+        color: #333
+        font-size: 16px
+        line-height: 25px
+        text-transform: uppercase
+        margin-bottom: 25px
+        @media (max-width: 991px)
+          font-size: 14px
+
+.pr_box
+  padding: 45px 0
+  @media (max-width: 1200px)
+    padding: 30px 0
+  .pr_row
+    > div
+      @media (max-width: 1200px)
+        margin-bottom: 30px
+    .pr_item
+      +flex
+      &:hover
+        picture
+          svg
+            *
+              fill: $red
+      picture
+        min-width: 35px
+        margin-right: 5px
+        svg
+          *
+            +transition($transition_default)
+      .text
+        strong
+          display: block
+          color: #333
+          font-size: 14px
+          font-family: $bold
+          text-transform: uppercase
+          margin-bottom: 8px
+          @media (min-width: 1201px)
+            white-space: nowrap
+        span
+          font-size: 14px
+          line-height: 16px
 
 
 
+.grey_box
+  +border-radius(35px 0px 0px 0px)
+  background: $bg_grey
+  padding: 35px
+  margin-bottom: 20px
+  //height: 100%
+  @media (max-width: 991px)
+    padding: 15px
+  .grey_box_content
+    padding: 15px 65px
+    @media (max-width: 767px)
+      padding: 15px 50px
+    @media (max-width: 575px)
+      padding: 15px
+.product_item
+  .img_thumbnail
+    background: #FFFFFF
+    width: 100%
+    height: 260px
+    border: 1px solid #DADADA
+    +flex
+    +ai-center
+    +j-center
+    position: relative
 
+    .label
+      position: absolute
+      left: 0
+      top: 15px
+      +flex
+      +ai-center
+      +j-center
+      +border-radius(0px 2px 2px 0px)
+      min-width: 60px
+      height: 25px
+      padding: 3px 5px
+      color: #fff
+      text-transform: uppercase
+      font-size: 14px
+      font-family: $bold
+      z-index: 2
+      &.new
+        background: $green
+  .product_item_body
+    text-align: center
+    padding: 10px 30px 18px
+    .product_name
+      color: #333
+      font-size: 14px
+      line-height: 16px
+      text-decoration: none
+      display: block
+      margin-bottom: 15px
+    .btn_default
+      margin: auto
+
+
+.title_box
+  +flex
+  +ai-center
+  picture
+    width: 50px
+    height: 50px
+    +border-radius(50%)
+    border: 1px solid $red
+    +flex
+    +ai-center
+    +j-center
+    margin-right: 15px
+    @media (max-width: 767px)
+      width: 40px
+      height: 40px
+      margin-right: 10px
+  .title, h1, .h1, .h2, h2
+    color: #333
+    font-family: $medium
+    font-size: 18px
+    line-height: 18px
+    text-transform: uppercase
+    @media (max-width: 767px)
+      font-size: 16px
+
+
+.main_product_slider
+  .slick-arrow
+    width: 20px
+    height: 20px
+    border: 0
+    background: none
+    opacity: 1
+    top: 35%
+    &:before
+      +b_a
+      width: 9px
+      height: 17px
+      +m_a
+      opacity: 1
+
+  .slick-next
+    right: -38px
+    @media (max-width: 1200px)
+      right: -20px
+    &:before
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='9' height='17' viewBox='0 0 9 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 16L8 8.5L1 1' stroke='%23333333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+  .slick-prev
+    left: -38px
+    @media (max-width: 1200px)
+      left: -20px
+    &:before
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='9' height='17' viewBox='0 0 9 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8 1L1 8.5L8 16' stroke='%23333333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+
+
+.main_news
+  .item
+    border-bottom: 1px solid #DADADA
+    padding-bottom: 25px
+    margin-bottom: 25px
+    &:last-child
+      margin-bottom: 0
+      padding-bottom: 0
+      border-bottom: 0
+  .news_title
+    order: 1
+    margin-bottom: 12px
+    a
+      color: #333
+      font-size: 14px
+      line-height: 14px
+      text-transform: uppercase
+      text-decoration: none
+      font-family: $medium
+
+  .date
+    text-align: right
+    order: 2
+    @media (max-width: 767px)
+      text-align: left
+      margin-bottom: 10px
+  .img_box
+    order: 2
+    text-align: left
+    @media (min-width: 768px)
+      order: 3
+      text-align: right
+    @media (max-width: 767px)
+      margin-bottom: 10px
+  .text_box
+    order: 3
+    @media (min-width: 768px)
+      order: 2
+    .excerpt
+      font-size: 14px
+      line-height: 16px
+      margin-bottom: 10px
+
+
+.read_more
+  display: inline-block
+  position: relative
+  text-decoration: none
+  &:hover
+    span
+      color: $red_hover
+      &:before
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 4.5H10.5M10.5 4.5L7 1M10.5 4.5L7 8' stroke='%23da3619' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+
+  span
+    position: relative
+    color: $red
+    font-size: 14px
+    font-family: $medium
+    padding-right: 20px
+    &:after
+      +b_a
+      right: 0
+      top: 0
+      bottom: 0
+      margin: auto
+      width: 12px
+      height: 9px
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 4.5H10.5M10.5 4.5L7 1M10.5 4.5L7 8' stroke='%23D23419' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+
+
+
+.date
+  font-size: 12px
+
+
+.main_catalog
+  > div
+    margin-bottom: 20px
+.category_item
+  background: #FFFFFF
+  border: 1px solid #DADADA
+  position: relative
+  overflow: hidden
+  &:hover
+    .sub_category
+      +transform(translateY(0))
+  .sub_category
+    //opacity: 0
+    padding: 27px 15px
+    position: absolute
+    width: 100%
+    height: 100%
+    background: #fff
+    z-index: 1
+    +transition($transition_default)
+    +transform(translateY(100%))
+    li
+      position: relative
+      padding-left: 15px
+      margin-bottom: 12px
+      &:last-child
+        margin-bottom: 0
+      &:before
+        +b_a
+        left: 0
+        top: 7px
+        +border-radius(50%)
+        background: $red
+        width: 7px
+        height: 7px
+
+      a
+        color: #333
+        text-decoration: none
+        font-size: 14px
+        font-family: $medium
+        &:hover
+          color: $red
+          text-decoration: none
+
+
+
+  .img_thumbnail
+    height: 170px
+    background-position: center
+    background-size: cover
+  .category_item_body
+    position: relative
+    padding: 30px 15px 10px
+    min-height: 77px
+    .icon
+      position: absolute
+      left: 13px
+      top: -17px
+      width: 35px
+      height: 35px
+      background: $red
+      +border-radius(50%)
+      +flex
+      +ai-center
+      +j-center
+    .category_name
+      color: #333
+      font-size: 14px
+      line-height: 16px
+      text-transform: uppercase
+      text-decoration: none
 
