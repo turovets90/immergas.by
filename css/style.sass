@@ -538,6 +538,7 @@ header
 
 strong, b
   font-family: $medium
+  color: #333
 .btn_default
   width: 100%
   max-width: 180px
@@ -656,7 +657,16 @@ strong, b
           font-size: 14px
           line-height: 16px
 
-
+.white_box
+  padding: 35px
+  @media (max-width: 991px)
+    padding: 15px
+.white_box_content
+  padding: 15px 65px
+  @media (max-width: 767px)
+    padding: 15px 50px
+  @media (max-width: 575px)
+    padding: 15px
 
 .grey_box
   +border-radius(35px 0px 0px 0px)
@@ -672,6 +682,24 @@ strong, b
       padding: 15px 50px
     @media (max-width: 575px)
       padding: 15px
+
+.product_list
+  margin-bottom: 25px
+  > div
+    margin-bottom: 20px
+  .product_item
+    border: 1px solid #DADADA
+    background: #fff
+    .img_thumbnail
+      height: 237px
+      border: 0
+      border-bottom: 1px solid #DADADA
+      img
+        max-height: 320px
+    .btn_default
+      max-width: 120px
+      height: 35px
+      font-size: 13px
 .product_item
   .img_thumbnail
     background: #FFFFFF
@@ -682,6 +710,8 @@ strong, b
     +ai-center
     +j-center
     position: relative
+    img
+      max-height: 255px
 
     .label
       position: absolute
@@ -729,6 +759,7 @@ strong, b
     margin-right: 15px
     @media (max-width: 767px)
       width: 40px
+      min-width: 40px
       height: 40px
       margin-right: 10px
   .title, h1, .h1, .h2, h2
@@ -737,6 +768,7 @@ strong, b
     font-size: 18px
     line-height: 18px
     text-transform: uppercase
+    margin-bottom: 0
     @media (max-width: 767px)
       font-size: 16px
 
@@ -846,6 +878,62 @@ strong, b
   font-size: 12px
 
 
+
+.breadcrumb
+  background: none
+  padding: 0
+  li
+    position: relative
+    padding: 0 15px
+    @media (max-width: 575px)
+      padding: 0 7px
+    &:first-child
+      padding-left: 20px
+      &:before
+        +b_a
+        left: 0
+        top: 0
+        bottom: 0
+        margin: auto
+        width: 12px
+        height: 10px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4.8 10V6.47059H7.2V10H10.2V5.29412H12L6 0L0 5.29412H1.8V10H4.8Z' fill='%23333333'/%3e%3c/svg%3e ")
+    &:last-child
+      a
+        color: $text_color
+    + li
+      &:before
+        content: '/'
+        position: absolute
+        left: -3px
+        top: 0
+        bottom: 0
+        margin: auto
+        font-size: 14px
+        color: #333
+        font-family: $roman
+        @media (max-width: 575px)
+          left: -2px
+
+
+    a
+      color: #333
+      font-size: 14px
+
+
+.page_content
+  .main_catalog
+    .category_item
+      @media (min-width: 992px)
+        border: 0
+        border-bottom: 1px solid #DADADA
+      @media (max-width: 991px)
+        height: auto
+      &:hover
+        @media (min-width: 992px)
+          z-index: 3
+          overflow: initial
+          +box-shadow(3px 4px 25px rgba(51, 51, 51, 0.15))
 .main_catalog
   > div
     margin-bottom: 20px
@@ -854,9 +942,24 @@ strong, b
   border: 1px solid #DADADA
   position: relative
   overflow: hidden
+  height: 247px
+
   &:hover
+    .category_item_content
+      height: auto
+      .btn_default
+        opacity: 1
     .sub_category
       +transform(translateY(0))
+  .category_item_content
+    @media (min-width: 992px)
+      position: absolute
+      width: 100%
+      left: 0
+      top: 0
+      height: 247px
+      background: #fff
+      border: 1px solid #DADADA
   .sub_category
     //opacity: 0
     padding: 27px 15px
@@ -918,6 +1021,19 @@ strong, b
       line-height: 16px
       text-transform: uppercase
       text-decoration: none
+      margin-bottom: 16px
+      display: -webkit-box
+      -webkit-box-orient: vertical
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: normal
+      -webkit-line-clamp: 2
+      max-height: 33px
+    .btn_default
+      max-width: 120px
+      font-size: 13px
+      @media (min-width: 992px)
+        opacity: 0
 
 .footer_menu
   +flex
@@ -989,3 +1105,362 @@ footer
       margin-bottom: 20px
   a, .phone
     color: #fff
+
+
+
+
+
+.page_pagination
+  +flex
+  +ai-center
+  +j-beetween
+  background: $bg_grey
+  padding: 15px 25px
+  //margin-bottom: 45px
+  @media (max-width: 575px)
+    +wrap
+    +j-start
+    padding: 10px
+  span
+    font-size: 12px
+    @media (max-width: 575px)
+      width: 100%
+      display: inline-block
+      margin-bottom: 20px
+  .custom_pagination
+    +flex
+    +ai-center
+    @media (max-width: 575px)
+      width: 100%
+    li
+      + li
+        margin-left: 3px
+      a
+        +flex
+        +ai-center
+        +j-center
+        width: 25px
+        height: 25px
+        +border-radius(2px)
+        text-decoration: none
+        color: $black
+        font-size: 16px
+        &:hover, &.active
+          text-decoration: none
+          background: $red_hover
+          color: #fff
+        &.page_prev, &.page_next
+          position: relative
+          border: 1px solid #D5D5D6
+          &:hover
+            border: 1px solid $red
+          &:before
+            +b_a
+            +m_a
+            width: 7px
+            height: 10px
+          &.page_prev
+            &:hover
+              &:before
+                background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='7' height='10' viewBox='0 0 7 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M6 9L1 5L6 1' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+            &:before
+              background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='7' height='10' viewBox='0 0 7 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M6 9L1 5L6 1' stroke='%23777777' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+          &.page_next
+            &:hover
+              &:before
+                background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='7' height='10' viewBox='0 0 7 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1L6 5L1 9' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+            &:before
+              background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='7' height='10' viewBox='0 0 7 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1L6 5L1 9' stroke='%23777777' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+
+
+.subcategory_list
+  > div
+    @media (max-width: 1200px)
+      margin-bottom: 20px
+  .subcategory_item
+    background: #FFFFFF
+    border: 1px solid #DADADA
+    +transition($transition_default)
+    &:hover
+      +box-shadow( 3px 4px 25px rgba(51, 51, 51, 0.15))
+      .subcategory_item_body
+        .subcategory_name
+          color: $red
+    picture
+      display: inline-block
+      width: 100%
+      height: 167px
+      position: relative
+      background: $bg_grey
+      a
+        position: relative
+        width: 100%
+        height: 100%
+        display: inline-block
+        img
+          position: absolute
+          +m_a
+          max-width: 98%
+          max-height: 98%
+
+    .subcategory_item_body
+      height: 75px
+      +flex
+      +ai-center
+      padding: 15px
+      .subcategory_name
+        color: #000
+        text-transform: uppercase
+        font-size: 14px
+        line-height: 16px
+        +transition($transition_default)
+        text-decoration: none
+
+
+
+.product_content
+  background: $bg_grey
+  +border-radius(35px 0px 0px 0px)
+  margin-bottom: 20px
+  .product_row
+    +flex
+    +wrap
+    .col_left
+      padding: 45px 70px
+      width: 68%
+      +flex
+      @media (max-width: 1200px)
+        padding: 30px 30px
+      @media (max-width: 767px)
+        width: 100%
+      @media (max-width: 575px)
+        padding: 20px 15px
+
+    .col_right
+      width: 32%
+      background: #EAEAEA
+      padding: 45px 20px
+      @media (max-width: 1200px)
+        padding: 30px 20px
+      @media (max-width: 767px)
+        width: 100%
+      @media (max-width: 575px)
+        padding: 20px 15px
+      .product_title
+        color: $red
+        font-size: 18px
+        line-height: 26px
+        text-transform: uppercase
+        font-family: $medium
+        margin-bottom: 15px
+      .articul
+        font-size: 14px
+        margin-bottom: 35px
+.pr_slider_nav_box
+  +flex
+  +ai-center
+  width: 80px
+  margin-right: 70px
+  margin-left: 30px
+  @media (max-width: 1200px)
+    margin-right: 30px
+    margin-left: 0
+  @media (max-width: 767px)
+    margin-right: 20px
+
+  .pr_slider_nav
+    .slick-arrow
+      left: 0
+      right: 0
+      margin: auto
+      width: 20px
+      height: 20px
+      &:before
+        +b_a
+        +m_a
+        width: 17px
+        height: 9px
+    .slick-prev
+      top: -25px
+      @media (max-width: 575px)
+        top: -10px
+      &:before
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='17' height='9' viewBox='0 0 17 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M16 8L8.5 1L1 8' stroke='%23333333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+    .slick-next
+      bottom: -45px
+      top: initial
+      @media (max-width: 575px)
+        bottom: -30px
+      &:before
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='17' height='9' viewBox='0 0 17 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1L8.5 8L16 1' stroke='%23333333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+    .div
+      padding: 7px 0
+      @media (max-width: 575px)
+        padding: 2px 0
+    .slick-current
+      .item
+        border: 1px solid #EF4123
+    .item
+      width: 80px
+      height: 80px
+      border: 1px solid #DADADA
+      background: #fff
+      position: relative
+      img
+        position: absolute
+        +m_a
+        max-height: 90%
+        max-width: 90%
+
+.pr_slider_box
+  width: calc(100% - 180px)
+  @media (max-width: 1200px)
+    width: calc(100% - 110px)
+  @media (max-width: 575px)
+    width: calc(100% - 100px)
+  .pr_slider
+    width: 100%
+    //max-width: 480px
+    height: 425px
+    background: #fff
+    border: 1px solid #DADADA
+    @media (max-width: 1200px)
+      height: 380px
+    @media (max-width: 767px)
+      height: 350px
+    @media (max-width: 575px)
+      height: 300px
+    .item
+      width: 100%
+      height: 425px
+      position: relative
+      +flex
+      +ai-center
+      +j-center
+      @media (max-width: 1200px)
+        height: 380px
+      @media (max-width: 767px)
+        height: 350px
+      @media (max-width: 575px)
+        height: 300px
+        a
+          display: inline-block
+          position: relative
+          width: 100%
+          height: 100%
+      img
+        position: absolute
+        +m_a
+        max-height: 95%
+        max-width: 95%
+
+
+
+.nav-tabs_product
+  width: 100%
+  .nav-item
+    width: 25%
+    @media (max-width: 767px)
+      width: 50%
+    .nav-link
+      color: #333
+      +border-radius(35px 35px 0px 0px)
+      text-align: center
+      text-transform: uppercase
+      font-size: 14px
+      display: inline-block
+      width: 100%
+      padding: 16px 10px
+      @media (max-width: 767px)
+        padding:
+
+      &.active
+        background: $bg_grey
+        color: $red
+        font-family: $bold
+
+.tab-content_product
+  background: $bg_grey
+  padding: 30px 100px
+  margin-bottom: 20px
+  @media (max-width: 1200px)
+    padding: 30px 70px
+  @media (max-width: 991px)
+    padding: 30px 50px
+  @media (max-width: 767px)
+    padding: 30px 30px
+  @media (max-width: 575px)
+    padding: 20px 15px
+
+.docs_list
+  .docs_item
+
+    padding: 20px
+    +flex
+    +transition($transition_default)
+    &:hover
+      +box-shadow(3px 4px 25px rgba(51, 51, 51, 0.15))
+      background: #fff
+      picture
+        svg
+          *
+            fill: $red
+      .download
+        text-decoration: underline
+    picture
+
+      min-width: 30px
+      margin-right: 10px
+      svg
+        *
+          +transition($transition_default)
+    .text
+      .docs_name
+        color: #333
+        font-family: $medium
+        font-size: 14px
+        margin-bottom: 5px
+      .date
+        margin-bottom: 10px
+
+.download
+  display: inline-block
+  position: relative
+  padding-left: 20px
+  font-size: 12px
+  font-family: $bold
+  &:before
+    +b_a
+    left: 0
+    top: 0
+    bottom: 0
+    margin: auto
+    width: 10px
+    height: 12px
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='12' viewBox='0 0 10 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2.35635 3.91534C2.35635 3.24093 2.36491 2.56181 2.35635 1.88741C2.33924 0.788553 3.07928 -0.032051 4.06316 0.000961755C4.69198 0.0198262 5.31652 0.0198262 5.94534 0.000961755C6.91211 -0.0273349 7.64359 0.779121 7.63932 1.85911C7.63504 3.28338 7.64359 4.70293 7.63504 6.12719C7.63504 6.33942 7.69065 6.3913 7.87887 6.38658C8.3708 6.37243 8.86274 6.38187 9.35467 6.38658C9.483 6.38658 9.61134 6.40073 9.73539 6.42431C10.022 6.48562 10.0819 6.62239 9.88511 6.87234C9.59422 7.24491 9.28195 7.59862 8.9654 7.94762C7.97298 9.04647 6.97627 10.1406 5.97529 11.23C5.79562 11.4281 5.60313 11.612 5.40635 11.796C5.12403 12.0601 4.88875 12.0742 4.6107 11.8007C4.21288 11.414 3.83216 11.0037 3.46 10.5934C2.40341 9.43791 1.35537 8.27774 0.307333 7.11758C0.213224 7.01382 0.131947 6.89121 0.0592263 6.76859C-0.0477163 6.57523 -0.0134947 6.49034 0.191835 6.43846C0.315888 6.40545 0.444219 6.3913 0.572551 6.38658C1.09871 6.38187 1.62914 6.37715 2.1553 6.38658C2.31785 6.3913 2.36063 6.32999 2.36063 6.15549C2.35207 5.41035 2.35635 4.6652 2.35635 3.91534Z' fill='%23EF4123'/%3e%3c/svg%3e ")
+
+
+
+.product_list_slider
+  .slick-arrow
+    width: 20px
+    height: 20px
+    border: 0
+    background: none
+    opacity: 1
+    &:before
+      +b_a
+      width: 9px
+      height: 17px
+      +m_a
+      opacity: 1
+
+  .slick-next
+    right: -20px
+    &:before
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='9' height='17' viewBox='0 0 9 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 16L8 8.5L1 1' stroke='%23333333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+  .slick-prev
+    left: -20px
+
+    &:before
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='9' height='17' viewBox='0 0 9 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8 1L1 8.5L8 16' stroke='%23333333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
