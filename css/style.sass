@@ -281,6 +281,9 @@ header
     margin-right: 10px
     @media (max-width: 1200px)
       margin-right: 5px
+    a
+      &:hover
+        opacity: 0.8
 
 
 .logo
@@ -836,6 +839,15 @@ strong, b
       text-align: right
     @media (max-width: 767px)
       margin-bottom: 10px
+    .img
+      background-size: cover
+      background-position: center
+      display: inline-block
+      width: 100%
+      height: 100px
+      @media (max-width: 767px)
+        height: 150px
+
   .text_box
     order: 3
     @media (min-width: 768px)
@@ -1004,6 +1016,8 @@ strong, b
     position: relative
     padding: 30px 15px 10px
     min-height: 77px
+    @media (max-width: 767px)
+      text-align: center
     .icon
       position: absolute
       left: 13px
@@ -1034,11 +1048,15 @@ strong, b
       font-size: 13px
       @media (min-width: 992px)
         opacity: 0
+      @media (max-width: 767px)
+        margin: auto
 
 .footer_menu
   +flex
   +ai-center
   +wrap
+  @media (max-width: 767px)
+    display: none
   li
     text-align: center
     @media (min-width: 992px)
@@ -1208,6 +1226,8 @@ footer
       +flex
       +ai-center
       padding: 15px
+      @media (max-width: 767px)
+        +j-center
       .subcategory_name
         color: #000
         text-transform: uppercase
@@ -1244,6 +1264,9 @@ footer
         padding: 30px 20px
       @media (max-width: 767px)
         width: 100%
+        text-align: center
+        .btn_default
+          max-width: 100%
       @media (max-width: 575px)
         padding: 20px 15px
       .product_title
@@ -1495,11 +1518,24 @@ footer
       font-family: $medium
   .news_item_body
     +flex
+    +wrap
     .img_thumbnail
       width: 37%
+      @media (max-width: 575px)
+        width: 100%
+        margin-bottom: 10px
+      .img
+        display: inline-block
+        width: 100%
+        height: 155px
+        background-position: center
+        background-size: cover
     .text
       width: 63%
       padding-left: 15px
+      @media (max-width: 575px)
+        width: 100%
+        padding-left: 0
       .excerpt
         font-size: 14px
         line-height: 16px
@@ -1604,7 +1640,20 @@ footer
 .red
   color: $red
 
+.field
+  margin-bottom: 10px
+  label
+    color: $text_color
+    font-size: 12px
+    margin-bottom: 5px
 
+  .form-control
+    border: 1px solid #DADADA
+    +border-radius(0)
+    background: #fff
+    height: 38px
+  textarea.form-control
+    height: 186px
 .modal
   .modal-dialog
     @media (min-width: 580px)
