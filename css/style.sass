@@ -697,6 +697,20 @@ strong, b
       height: 237px
       border: 0
       border-bottom: 1px solid #DADADA
+      position: relative
+      .icon
+        position: absolute
+        left: 10px
+        bottom: 15px
+        width: 35px
+        height: 35px
+        border: 1px solid $red
+        +flex
+        +ai-center
+        +j-center
+        +border-radius(50%)
+        z-index: 2
+        cursor: pointer
       img
         max-height: 320px
     .btn_default
@@ -1741,6 +1755,22 @@ footer
       +transition($transition_default)
       +transform(translateY(100%))
       opacity: 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
