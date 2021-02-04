@@ -1697,3 +1697,50 @@ footer
     left: 0
     top: 0
     background: rgba(0, 0, 0, 0.6)
+
+.instafeed
+  padding-bottom: 10px
+  > div
+    margin-bottom: 20px
+.instafeed_item
+  +flex
+  width: 100%
+  &:hover
+    +box-shadow(3px 4px 25px rgba(51, 51, 51, 0.15))
+    .link
+      .content
+        +transform(translateY(0))
+        opacity: 1
+  .link
+    +flex
+    position: relative
+    width: 100%
+    overflow: hidden
+    .img
+      +flex
+      width: 100%
+      height: 215px
+      background-position: center
+      background-size: cover
+    .content
+      position: absolute
+      width: 100%
+      height: 100%
+      background: #fff
+      border: 1px solid #DADADA
+      top: 0
+      left: 0
+      +flex
+      +ai-center
+      +j-center
+      padding: 20px
+      color: #333
+      font-size: 14px
+      line-height: 16px
+      text-align: center
+      +transition($transition_default)
+      +transform(translateY(100%))
+      opacity: 0
+
+
+
