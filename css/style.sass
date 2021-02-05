@@ -698,7 +698,7 @@ strong, b
       border: 0
       border-bottom: 1px solid #DADADA
       position: relative
-      .icon
+      .custom_tooltip
         position: absolute
         left: 10px
         bottom: 15px
@@ -1224,6 +1224,10 @@ footer
       height: 167px
       position: relative
       background: $bg_grey
+      .custom_tooltip
+        position: absolute
+        left: 10px
+        bottom: 15px
       a
         position: relative
         width: 100%
@@ -1782,7 +1786,16 @@ footer
 
 
 
-
+.custom_tooltip
+  width: 35px
+  height: 35px
+  border: 1px solid $red
+  +flex
+  +ai-center
+  +j-center
+  +border-radius(50%)
+  z-index: 2
+  cursor: pointer
 
 
 
